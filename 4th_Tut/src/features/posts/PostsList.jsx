@@ -14,13 +14,13 @@ const PostsList = () => {
   const postsStatus = useSelector(getPostsStatus);
   const error = useSelector(getPostsError);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (postsStatus === "idle") {
-      dispatch(fetchPosts());
-    }
-  }, [postsStatus, dispatch]);
+  // useEffect(() => {
+  //   if (postsStatus === "idle") {
+  //     dispatch(fetchPosts());
+  //   }
+  // }, [postsStatus, dispatch]);
 
   let content;
   if (postsStatus === "loading") {
@@ -29,8 +29,8 @@ const PostsList = () => {
     const orderedPosts = posts
       .slice()
       .sort((a, b) => b.date.localeCompare(a.date));
-    content = orderedPosts.map((post, index) => (
-      <PostsExcerpt key={index} post={post} />
+    content = orderedPosts.map((post) => (
+      <PostsExcerpt key={post.id} post={post} />
     ));
     // console.log(orderedPosts);
   } else if (postsStatus === "failed") {

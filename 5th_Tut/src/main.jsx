@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { fetchPosts } from "./features/posts/postsSlice";
 
 store.dispatch(fetchUsers());
+store.dispatch(fetchPosts());
 //we want this immediately when the application loads
 
 ReactDOM.createRoot(document.getElementById("root")).render(

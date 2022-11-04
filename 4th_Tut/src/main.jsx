@@ -8,6 +8,7 @@ import { fetchUsers } from "./features/users/usersSlice";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { fetchPosts } from "./features/posts/postsSlice";
 
+store.dispatch(fetchPosts());
 store.dispatch(fetchUsers());
 //we want this immediately when the application loads
 
